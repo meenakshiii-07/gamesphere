@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body text-center">
+                <h1 class="card-title mb-4">Welcome to GameSphere</h1>
+                <p class="card-text lead mb-4">Your one-stop destination for educational resources and study materials.</p>
+                {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('class_selection') }}" class="btn btn-primary btn-lg">Go to Classes</a>
+                {% else %}
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                        <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg px-4">Login</a>
+                        <a href="{{ url_for('register') }}" class="btn btn-outline-primary btn-lg px-4">Register</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}{{ subject|title }} Notes - Class {{ class_name }}{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4">{{ subject|title }} Notes for Class {{ class_name }}</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="content">
+                            {{ content|safe }}
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="{{ url_for('subject_selection', class_name=class_name) }}" class="btn btn-secondary">Back to Subjects</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
