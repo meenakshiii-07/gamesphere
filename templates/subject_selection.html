@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Select Subject{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4">Select Subject for Class {{ class_name }}</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <h3 class="card-title">Physics</h3>
+                                <p class="card-text">Access Physics study materials</p>
+                                <a href="{{ url_for('notes', class_name=class_name, subject='physics') }}" class="btn btn-primary">View Physics Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <h3 class="card-title">Chemistry</h3>
+                                <p class="card-text">Access Chemistry study materials</p>
+                                <a href="{{ url_for('notes', class_name=class_name, subject='chemistry') }}" class="btn btn-primary">View Chemistry Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <h3 class="card-title">Mathematics</h3>
+                                <p class="card-text">Access Mathematics study materials</p>
+                                <a href="{{ url_for('notes', class_name=class_name, subject='maths') }}" class="btn btn-primary">View Maths Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
